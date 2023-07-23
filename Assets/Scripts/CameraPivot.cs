@@ -18,6 +18,8 @@ public class CameraPivot : MonoBehaviour
         Vector3 horizontalDistance = new Vector3(cameraTransform.position.x, 0, cameraTransform.position.z);
         disFromPivot = horizontalDistance.magnitude;
         heightFromPivot = cameraTransform.position.y;
+
+        SetAngle(angle);
     }
 
     // Update is called once per frame
@@ -39,11 +41,11 @@ public class CameraPivot : MonoBehaviour
         angle = _angle % 360f;
 
         //Setting Camera Position
-        Vector3 newCamPosition = new Vector3(Mathf.Acos(angle) * disFromPivot, heightFromPivot, Mathf.Asin(angle) * disFromPivot);
+        Vector3 newCamPosition = new Vector3(Mathf.Cos(angle*Mathf.Deg2Rad) * disFromPivot, heightFromPivot, Mathf.Sin(angle*Mathf.Deg2Rad) * disFromPivot);
         cameraTransform.position = newCamPosition;
 
         //Setting camera rotation
-        Vector3 dirToPivot = cameraTransform.position - transform.position;
+        Vector3 dirToPivot = transform.position - cameraTransform.position;
         cameraTransform.rotation = Quaternion.LookRotation(dirToPivot, Vector3.up);
     }
 }

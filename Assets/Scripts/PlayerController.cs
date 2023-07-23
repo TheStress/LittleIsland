@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private float xFollowPosition;
+    private float maxCamRotSpeed = 15f;
+    private float maxDisForMaxCamRot = 200f;
+    private CameraPivot cameraPivot;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        cameraPivot = FindObjectOfType<CameraPivot>();
     }
 
     // Update is called once per frame
@@ -19,7 +25,15 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-
+            xFollowPosition = Input.mousePosition.x;
+        }
+        if(Input.GetMouseButton(1))
+        {
+            float disToMouse = xFollowPosition - Input.mousePosition.x;
+            float camRotSpeed = maxCamRotSpeed * Mathf.InverseLerp(0, maxDisForMaxCamRot, Mathf.Abs(disToMouse)) * Mathf.Sign(disToMouse);
+            xFollowPosition = Mathf.Lerp(xFollowPosition, Input.mousePosition.x, 0.2f);
+            
+            cameraPivot.SetAngle(cameraPivot.angle + camRotSpeed);
         }
     }
 
