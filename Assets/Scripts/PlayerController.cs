@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
         if(Input.GetMouseButton(1))
         {
             float disToMouse = xFollowPosition - Input.mousePosition.x;
-            float camRotSpeed = maxCamRotSpeed * Mathf.InverseLerp(0, maxDisForMaxCamRot, Mathf.Abs(disToMouse)) * Mathf.Sign(disToMouse);
+            float camRotSpeed = maxCamRotSpeed * 
+                Mathf.InverseLerp(0, maxDisForMaxCamRot, Mathf.Abs(disToMouse)) * 
+                Mathf.Sign(disToMouse);
             xFollowPosition = Mathf.Lerp(xFollowPosition, Input.mousePosition.x, 0.2f);
             
             cameraPivot.SetAngle(cameraPivot.angle + camRotSpeed);
@@ -41,8 +43,6 @@ public class PlayerController : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
 
-        Debug.Log(ray.origin);
-        Debug.Log(ray.direction);
         Debug.DrawRay(ray.origin, ray.direction * 100f, Color.blue, 5f);
 
         RaycastHit hit;
