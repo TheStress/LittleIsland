@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             Interactible interactible;
             if(hit.collider.gameObject.TryGetComponent<Interactible>(out interactible))
             {
-                interactible.ClickedOn();
+                interactible.ClickedOn(hit);
             }
         }
     }

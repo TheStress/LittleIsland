@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Food : Interactible
 {
-    public override void ClickedOn()
+    public override void ClickedOn(RaycastHit hit)
     {
         Debug.Log(gameObject.name + " clicked on");
         FindObjectOfType<ListManager>().FoundFood(gameObject.name);

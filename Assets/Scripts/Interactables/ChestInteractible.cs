@@ -27,7 +27,7 @@ public class ChestInteractible : Interactible
             chestLid.eulerAngles = new Vector3(newX, y, z);
         }
     }
-    public override void ClickedOn()
+    public override void ClickedOn(RaycastHit hit)
     {
         Debug.Log(gameObject.name + " clicked on");
         Destroy(boxCollider);
