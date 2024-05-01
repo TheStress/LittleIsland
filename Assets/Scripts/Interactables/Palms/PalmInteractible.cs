@@ -52,7 +52,7 @@ public class PalmInteractible : Interactible
         Debug.DrawLine(source.transform.position, source.transform.position+ocilationDir, Color.red, 5f);
 
         // Calculating rotation direction
-        int rotSign = (int)Mathf.Sign(Vector3.Dot(direction.normalized, ocilationDir)); // Calculating sign of rotation
+        int rotSign = -(int)Mathf.Sign(Vector3.Dot(direction.normalized, ocilationDir)); // Calculating sign of rotation
         if (rotSign == 0) { rotSign = 1; } // Dealing with the 0 edge case
 
         // Adding values
@@ -78,7 +78,7 @@ public class PalmInteractible : Interactible
         Quaternion rotUpdate = Quaternion.AngleAxis(rotSpeed*Time.deltaTime, Vector3.up);
 
         // Applying values
-        source.rotation = rotUpdate * source.rotation;
+        //source.rotation = rotUpdate * source.rotation;
         ocilationDir = rotUpdate * ocilationDir;
     }
 
