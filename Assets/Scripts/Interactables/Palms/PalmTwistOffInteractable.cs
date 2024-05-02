@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PalmTwistOffInteractable : Interactible
+public class PalmTwistOffInteractable : Interactable
 {
     // Set Values
     [SerializeField] float addRotSpeed;

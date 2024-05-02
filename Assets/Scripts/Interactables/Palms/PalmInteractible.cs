@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PalmInteractible : Interactible
+public class PalmInteractible : Interactable
 {
     // Set Values
     [Range(0,90)]

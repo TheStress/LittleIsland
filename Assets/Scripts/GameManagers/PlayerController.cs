@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            Interactible interactible;
-            if(hit.collider.gameObject.TryGetComponent<Interactible>(out interactible))
+            Interactable interactible;
+            if(hit.collider.gameObject.TryGetComponent<Interactable>(out interactible))
             {
                 interactible.ClickedOn(hit);
             }

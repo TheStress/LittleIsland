@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food : Interactible
+public class Food : Interactable
 {
     public override void ClickedOn(RaycastHit hit)
     {
