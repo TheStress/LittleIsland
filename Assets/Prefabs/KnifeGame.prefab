@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.29
-  m_fontSizeBase: 3.29
+  m_fontSize: 2.5
+  m_fontSizeBase: 2.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5590813443fc6447b4c953a2f2e1efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countToWin: 2
+  countToWin: 5
   food: {fileID: 0}
   counterUI: {fileID: 83141181}
 --- !u!1001 &3089745314446007130
@@ -463,7 +463,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.672958
+  m_Radius: 2
   m_Center: {x: 0, y: 1.9969139, z: 0}
 --- !u!114 &3280808798809763953
 MonoBehaviour:

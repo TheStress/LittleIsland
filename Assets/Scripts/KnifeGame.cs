@@ -14,22 +14,21 @@ public class KnifeGame : MonoBehaviour
     int count = 0;
 
     public void StartGame() {
-        ResetGame();
+        count = 0;
         gameStarted = true;
         counterUI.gameObject.SetActive(true);
     }
+    
     public bool IsStarted() {
         return gameStarted;
     }
+    
     public void EndGame() {
-        ResetGame();
+        count = 0;
         gameStarted = false;
         counterUI.gameObject.SetActive(false);
     }
-    private void ResetGame() {
-        gameWin = false;
-        count = 0;
-    }
+
     public void CountIncrement() {
         count++;
         counterUI.text = count.ToString();

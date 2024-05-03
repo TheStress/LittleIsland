@@ -54,7 +54,7 @@ public class KnifeInteractable : Interactable
         return false;
     }
     public override void ClickedOn(RaycastHit hit) {
-        if(knifeGame.IsStarted()) {
+        if(!knifeGame.IsStarted()) {
             knifeGame.StartGame();
             PopUp();
         }
