@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] GameObject clickParticle;
     [SerializeField] float particleOffset;
+    [SerializeField] AudioSource clickSound;
 
     private float xFollowPosition;
     private float maxCamRotSpeed = 15f;
@@ -55,6 +56,12 @@ public class PlayerController : MonoBehaviour
             GameObject particle = Instantiate(clickParticle, hit.point, Quaternion.identity);
             particle.transform.position += particleOffset * hit.normal;
             particle.transform.up = hit.normal;
+
+            // Playing sound
+            if(clickSound.isPlaying) {
+                clickSound.Stop();
+            }
+            clickSound.Play();
 
             // Checking for any interactables
             Interactable interactible;

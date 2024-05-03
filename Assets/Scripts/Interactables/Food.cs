@@ -6,6 +6,7 @@ public class Food : Interactable
 {
     [SerializeField] AnimationCurve popEffectCurve;
     [SerializeField] float popEffectDuration;
+    [SerializeField] AudioSource dingSound;
 
     float popEffectTimer;
     bool clickedOn = false;
@@ -32,6 +33,13 @@ public class Food : Interactable
             clickedOn = true;
             FindObjectOfType<ListManager>().FoundFood(gameObject.name);
             popEffectTimer = 0;
+
+
+            // Playing sound
+            if (dingSound.isPlaying) {
+                dingSound.Stop();
+            }
+            dingSound.Play();
         }
     }
 }
