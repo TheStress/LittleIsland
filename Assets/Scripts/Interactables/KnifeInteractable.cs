@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KnifeInteractable : Interactable
 {
+    // Set Variables
     [SerializeField] KnifeGame knifeGame;
     [SerializeField] Transform playAreaCenter;
     [SerializeField] Transform startPosition;
@@ -11,6 +12,10 @@ public class KnifeInteractable : Interactable
     [SerializeField] float failFloor;
     [SerializeField] float verticalForce;
     [SerializeField] float horizontalForce;
+
+    // Flip Variables
+    [SerializeField] float flipDuration;
+    [SerializeField] Animator animator;
 
 
     Rigidbody rb;
@@ -41,9 +46,14 @@ public class KnifeInteractable : Interactable
         // Applying force
         rb.velocity = appliedVerticalForce + appliedHorizontalForce;
 
+        // Setting rotation
+        rb.transform.forward = horizontalDir;
+        animator.SetTrigger("StartFlip");
+
         // Incrementing counter for game
         knifeGame.CountIncrement();
     }
+
 
     private bool InPlayArea() {
         // Returning true if the player is within horizontal area

@@ -22,6 +22,12 @@ public class PalmInteractible : Interactable
 
     [SerializeField] Transform source;
 
+    // Fruit
+    [SerializeField] GameObject fruitObject;
+    [SerializeField] float fruitDropSpeed;
+    bool fruitDropped = false;
+
+
     // Current Values
     float rotSpeed;
     float ocilationSpeed;
@@ -31,6 +37,14 @@ public class PalmInteractible : Interactable
     Vector3 ocilationDir = Vector3.zero;
 
     private void Update() {
+        // Dropping fruit
+        if(!fruitDropped) {
+            if(ocilationSpeed > fruitDropSpeed) {
+                fruitDropped = true;
+                fruitObject.SetActive(true);
+            }
+        }
+
         // Rotating about y axis based on rot speed
         RotateUpdate();
 

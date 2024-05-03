@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4400278822268752483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 27.11, z: 12.4}
+  m_LocalPosition: {x: -11.2, y: 27.11, z: -2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -247,7 +247,8 @@ MonoBehaviour:
   angleForPopOff: 360
   source: {fileID: 9143314037314778889}
   poppOffDir: {fileID: 82274202043815302}
-  popOffForce: 5
+  popOffForce: 15
+  popOffOffset: 1
   looseLeaves: {fileID: 8176295367877965630, guid: 4007b0c76ddc36549af7fb251f3d91a5,
     type: 3}
 --- !u!1 &6572377388523423695

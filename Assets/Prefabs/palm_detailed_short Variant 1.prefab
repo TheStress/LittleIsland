@@ -111,14 +111,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b261a4b970b8957478935c99b99d5ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmplitudeAngle: 79.8
+  maxAmplitudeAngle: 50
   addAmplitudeAngle: 25
   addRotSpeed: 50
-  addOcilationSpeed: 50
+  addOcilationSpeed: 100
   dampRate: 0.01
   dampAmount: 0.01
   dampRotFactor: 1
-  dampOcilationFactor: 0.1
+  dampOcilationFactor: 0.2
   dampAmplitudeFactor: 1
   source: {fileID: 8429562231379519532}
 --- !u!1 &4914802568504084260

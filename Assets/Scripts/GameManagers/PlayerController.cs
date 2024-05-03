@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] GameObject clickParticle;
+    [SerializeField] float particleOffset;
+
     private float xFollowPosition;
     private float maxCamRotSpeed = 15f;
     private float maxDisForMaxCamRot = 200f;
@@ -48,10 +51,16 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            // Spawning and orienting particle
+            GameObject particle = Instantiate(clickParticle, hit.point, Quaternion.identity);
+            particle.transform.position += particleOffset * hit.normal;
+            particle.transform.up = hit.normal;
+
+            // Checking for any interactables
             Interactable interactible;
-            if(hit.collider.gameObject.TryGetComponent<Interactable>(out interactible))
-            {
-                interactible.ClickedOn(hit);
+            if(hit.collider.gameObject.TryGetComponent<Interactable>(out interactible)) {
+                // Triggering interactables
+                interactible.ClickedOn(hit); 
             }
         }
     }
