@@ -7,6 +7,7 @@ public class Food : Interactable
     [SerializeField] AnimationCurve popEffectCurve;
     [SerializeField] float popEffectDuration;
     [SerializeField] AudioSource dingSound;
+    [SerializeField] Animator animator = null;
 
     float popEffectTimer;
     bool clickedOn = false;
@@ -14,6 +15,9 @@ public class Food : Interactable
     private void Update() {
         if (clickedOn) {
             PopEffectUpdate();
+        }
+        if(TryGetComponent(out Animator anim)) {
+            animator = anim;
         }
     }
 
@@ -40,6 +44,9 @@ public class Food : Interactable
                 dingSound.Stop();
             }
             dingSound.Play();
+            if(animator != null) {
+                animator.speed = 0;
+            }
         }
     }
 }

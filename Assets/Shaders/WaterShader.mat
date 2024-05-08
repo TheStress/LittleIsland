@@ -100,6 +100,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Depth: 1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
@@ -113,20 +114,22 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RippleDensity: 296.6
-    - _RippleSpeed: 1
-    - _Slimness: 5
+    - _RippleDensity: 1000
+    - _RippleSpeed: 2
+    - _Slimness: 10
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
+    - _Strength: 4.06
     - _Surface: 1
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.31961823, b: 1, a: 1}
+    - _BaseColor: {r: 0, g: 0.3372549, b: 1.7098039, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RippleColor: {r: 0.4202207, g: 0.6645287, b: 0.9811321, a: 0}
+    - _RippleColor: {r: 0.05245098, g: 0.08284314, b: 0.12254902, a: 0}
+    - _ShoreColor: {r: 0.1699537, g: 0.31599492, b: 0.41509432, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
